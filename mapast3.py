@@ -84,7 +84,7 @@ with col_graficos:
     st.subheader("Estatísticas do Ponto Selecionado")
 
     if retorno and retorno.get("last_object_clicked_tooltip"):
-        km_selecionado = int(retorno["last_object_clicked_tooltip"].split()[1])
+        km_selecionado = int(float(retorno["last_object_clicked_tooltip"].split()[1]))
         ponto = next((p for p in pontos_info if p[2] == km_selecionado), None)
 
         if ponto:
